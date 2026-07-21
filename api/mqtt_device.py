@@ -5,6 +5,7 @@ Specific device classes should be inherited from this base class
 It also provides an MQTT device factory to create correct device class instance depending on specific device
 """
 
+from __future__ import annotations
 import contextlib
 from typing import TYPE_CHECKING, Any
 
