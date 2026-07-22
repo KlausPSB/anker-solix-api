@@ -3,7 +3,7 @@
 This module provides control features specific to the Anker Solix Solarbank device family.
 """
 
-from __future__ import annotations  # noqa: TID251
+from __future__ import annotations
 
 from datetime import time
 from typing import TYPE_CHECKING

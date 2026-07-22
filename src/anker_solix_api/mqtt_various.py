@@ -3,6 +3,11 @@
 This module contains control methods specific to various Anker Solix device not covered by other classes.
 These methods provide comprehensive device control via MQTT commands.
 """
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .api import AnkerSolixApi
 
 from __future__ import annotations  # noqa: TID251
 
