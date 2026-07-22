@@ -2394,7 +2394,16 @@ _A17E2_0405 = {
     "fd": {NAME: "max_load_limit_total?"},
     "fe": {NAME: "msg_timestamp"},
 }
-
+_A17E2_0402 = {
+    TOPIC: "param_info",
+    "a1": {NAME: "device_index_marker?"},
+    "a2": {NAME: "device_slot_1_raw?"},
+    "a3": {NAME: "device_slot_2_raw?"},
+    "a4": {NAME: "device_slot_3_raw?"},
+    "a5": {NAME: "device_slot_4_raw?"},
+    "a6": {NAME: "device_slot_5_raw?"},
+    "fe": {NAME: "msg_timestamp"},
+}
 _A17E2_040A = {
     # Solarbank Max AC / A17E2 short param/expansion info
     TOPIC: "param_info",
