@@ -21,3 +21,7 @@ poetry.lock
 /client.py
 /daily_energy_*.csv
 .env
+mqtt_bridge_orig.py
+mqtt_bridge.py
+print_site_ids.py
+set_usage_mode.py
