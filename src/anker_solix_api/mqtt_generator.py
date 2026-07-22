@@ -9,10 +9,6 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .api import AnkerSolixApi
 
-from __future__ import annotations  # noqa: TID251
-
-from typing import TYPE_CHECKING
-
 from .mqtt_device import SolixMqttDevice
 from .mqttcmdmap import SolixMqttCommands
 
