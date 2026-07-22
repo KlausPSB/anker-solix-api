@@ -2325,7 +2325,171 @@ _A17C5_040a = (
         # Additional/different Solarbank 3 Expansion data?
     }
 )
+#new max ac fields - BEGIN
+_A17E2_0405 = {
+    # Solarbank Max AC / A17E2 param info
+    TOPIC: "param_info",
+    "a2": {NAME: "device_sn"},
+    "a3": {NAME: "battery_soc"},  # observed constant 89 in samples
+    "a4": {NAME: "power_mode?"},
+    "a5": {NAME: "status_code?"},
+    "a6": {NAME: "error_code?"},
+    "a7": {NAME: "sw_version", "values": 4},
+    "a8": {NAME: "sw_controller", "values": 4},
+    "a9": {NAME: "sw_expansion", "values": 4},
+    "aa": {NAME: "unknown_0405_aa?"},
+    "ab": {NAME: "photovoltaic_power", FACTOR: 1},
+    "ac": {NAME: "battery_power_signed", FACTOR: 1},
+    "ad": {NAME: "output_power", FACTOR: 1},
+    "ae": {NAME: "ac_output_power_signed", FACTOR: 1},
+    "af": {NAME: "home_demand", FACTOR: 1},
+    "b0": {NAME: "pv_yield", FACTOR: 1},
+    "b1": {NAME: "charged_energy", FACTOR: 1},
+    "b2": {NAME: "discharged_energy", FACTOR: 1},
+    "b3": {NAME: "output_energy", FACTOR: 1},
+    "b4": {NAME: "consumed_energy", FACTOR: 1},
+    "b5": {NAME: "unknown_0405_b5?"},
+    "b6": {NAME: "backup_soc?"},
+    "b7": {NAME: "min_soc?"},
+    "b8": {NAME: "usage_mode"},
+    "b9": {NAME: "home_load_preset"},
+    "ba": {NAME: "device_flags?"},
+    "bb": {NAME: "heating_power"},
+    "bc": {NAME: "grid_to_battery_power"},
+    "bd": {NAME: "max_load"},
+    "be": {NAME: "pv_limit?"},
+    "bf": {NAME: "unknown_0405_bf?"},
+    "c0": {NAME: "unknown_0405_c0?"},
+    "c1": {NAME: "unknown_0405_c1?"},
+    "c2": {NAME: "unknown_0405_c2?"},
+    "c3": {NAME: "grid_status?"},
+    "c4": {NAME: "ac_input_limit", FACTOR: 1},
+    "c5": {NAME: "ac_input_limit_max", FACTOR: 1},
+    "c6": {NAME: "pv_3rd_party_power?"},
+    "c7": {NAME: "pv1_power", FACTOR: 1},
+    "c8": {NAME: "pv2_power", FACTOR: 1},
+    "c9": {NAME: "pv3_power", FACTOR: 1},
+    "ca": {NAME: "pv4_power", FACTOR: 0.1},
+    "cb": {NAME: "ac_socket_switch"},
+    "cc": {NAME: "device_timeout_minutes"},
+    "d3": {NAME: "light_switch?"},
+    "d4": {NAME: "grid_power_signed?"},
+    "d5": {NAME: "unknown_0405_d5?"},
+    "d6": {NAME: "generator_power?"},
+    "d7": {NAME: "temp_unit_fahrenheit"},
+    "d8": {NAME: "temperature", SIGNED: True},
+    "d9": {NAME: "light_mode"},
+    "da": {NAME: "grid_export_disabled?"},
+    "db": {NAME: "unknown_0405_db?"},
+    "dc": {NAME: "expansion_packs?"},
+    "dd": {NAME: "device_count?"},
+    "de": {NAME: "unknown_0405_de?"},
+    "df": {NAME: "unknown_0405_df?"},
+    "e0": {NAME: "unknown_0405_e0?"},
+    "e3": {NAME: "unknown_0405_e3?"},
+    "e4": {NAME: "unknown_0405_e4?"},
+    "e5": {NAME: "unknown_0405_e5?"},
+    "f8": {NAME: "unknown_0405_f8?"},
+    "fc": {NAME: "unknown_0405_fc?"},
+    "fd": {NAME: "max_load_limit_total?"},
+    "fe": {NAME: "msg_timestamp"},
+}
 
+_A17E2_040A = {
+    # Solarbank Max AC / A17E2 short param/expansion info
+    TOPIC: "param_info",
+    "a2": {NAME: "expansion_packs"},
+    "a3": {NAME: "battery_soc"},
+    "a4": {
+        BYTES: {
+            "00": {
+                NAME: "device_sn",
+                TYPE: DeviceHexDataTypes.str.value,
+                LENGTH: 17,
+            },
+            "17": {
+                NAME: "separator_01?",
+                TYPE: DeviceHexDataTypes.ui.value,
+            },
+            "18": {
+                NAME: "unknown_040a_18?",
+                TYPE: DeviceHexDataTypes.ui.value,
+            },
+            "19": {
+                NAME: "temperature",
+                TYPE: DeviceHexDataTypes.ui.value,
+                SIGNED: True,
+            },
+            "20": {
+                NAME: "separator_02?",
+                TYPE: DeviceHexDataTypes.ui.value,
+            },
+            "21": {
+                NAME: "battery_soc_dup?",
+                TYPE: DeviceHexDataTypes.ui.value,
+            },
+            "22": {
+                NAME: "battery_soh?",
+                TYPE: DeviceHexDataTypes.ui.value,
+            },
+        },
+    },
+    "fe": {NAME: "msg_timestamp"},
+}
+
+_A17E2_0420 = {
+    # Solarbank Max AC / A17E2 state info
+    TOPIC: "state_info",
+    "a2": {NAME: "device_sn"},
+    "a3": {NAME: "msg_timestamp"},
+    "a4": {NAME: "local_timestamp"},
+    "a5": {NAME: "unknown_0420_a5?"},
+    "a6": {NAME: "unknown_0420_a6?"},
+    "a7": {NAME: "battery_soc"},
+    "a8": {NAME: "charging_status"},
+    "a9": {NAME: "usage_mode"},
+    "aa": {NAME: "heartbeat_interval?"},
+    "ab": {NAME: "photovoltaic_power"},
+    "ac": {NAME: "battery_power_signed"},
+    "ad": {NAME: "ac_output_power_signed"},
+    "ae": {NAME: "grid_power_signed?"},
+    "af": {NAME: "home_demand"},
+    "b0": {NAME: "generator_power?"},
+    "b1": {NAME: "grid_export_power?"},
+    "b2": {NAME: "reserved_power?"},
+    "b3": {
+        BYTES: {
+            "00": {
+                NAME: "device_block_type?",
+                TYPE: DeviceHexDataTypes.ui.value,
+            },
+            "01": {
+                NAME: "device2_sn?",
+                TYPE: DeviceHexDataTypes.str.value,
+                LENGTH: 17,
+            },
+            "18": {
+                NAME: "device2_battery_soc?",
+                TYPE: DeviceHexDataTypes.ui.value,
+            },
+        },
+    },
+    "bf": {NAME: "unknown_0420_bf?"},
+    "c0": {NAME: "unknown_0420_c0?"},
+    "c1": {NAME: "device_sn_dup?"},
+    "c2": {NAME: "device2_pv_power?"},
+    "c3": {NAME: "device2_output_power?"},
+    "c4": {NAME: "device2_home_demand?"},
+    "c5": {NAME: "device2_grid_power?"},
+    "c6": {NAME: "unknown_0420_c6?"},
+    "cc": {NAME: "device_timeout_minutes"},
+    "cd": {NAME: "unknown_0420_cd?"},
+    "ce": {NAME: "ac_input_limit"},
+    "f8": {NAME: "unknown_0420_f8?"},
+}
+
+
+#new max ac fields - END
 _A17E1_040a = {
     # Home Backup System E10 Expansion data
     TOPIC: "param_info",
@@ -6466,6 +6630,63 @@ SOLIXMQTTMAP: Final[dict] = {
         # Expansion data
         # Interval: ~3-5 seconds, but only with realtime trigger
         "040a": _A17C5_040a,
+    },
+    # Solarbank Max AC
+    "A17E2": {
+        "0050": CMD_TEMP_UNIT,  # Temperature unit switch: Celsius (0) or Fahrenheit (1)
+        "0057": CMD_REALTIME_TRIGGER,  # for regular status messages 0405, 040a, 0420 etc
+
+        "005a": CMD_SB_MAX_LOAD  # same pattern but different command for max load settings in parallel systems
+        | {
+            COMMAND_NAME: SolixMqttCommands.sb_max_load_parallel,
+            "a2": {
+                **CMD_SB_MAX_LOAD["a2"],
+                VALUE_OPTIONS: [1200, 2400, 3600, 4800],
+                VALUE_OPTIONS_STATE: "max_load_parallel_options",
+            },
+            "a3": {
+                **CMD_SB_MAX_LOAD["a3"],
+                VALUE_DEFAULT: 2,
+            },
+        },
+
+        "0067": CMD_SB_MIN_SOC,  # select SOC reserve, assumption based on newer Solarbank family
+
+        "0068": {
+            # solarbank light command group
+            COMMAND_LIST: [
+                SolixMqttCommands.sb_light_mode_select,  # field a2
+                SolixMqttCommands.sb_light_switch,  # field a3
+            ],
+            SolixMqttCommands.sb_light_mode_select: CMD_SB_LIGHT_MODE,  # Normal (0), Mood light (1)
+            SolixMqttCommands.sb_light_switch: CMD_SB_LIGHT_SWITCH,  # Light Off (1), Light On (0)
+        },
+
+        "0080": {
+            # solarbank command group
+            COMMAND_LIST: [
+                SolixMqttCommands.sb_max_load,  # field a2, a3
+                SolixMqttCommands.sb_disable_grid_export_switch,  # field a5, a6, a9
+                SolixMqttCommands.sb_ac_input_limit,  # field a8
+            ],
+            SolixMqttCommands.sb_max_load: CMD_SB_MAX_LOAD
+            | {
+                "a2": {
+                    **CMD_SB_MAX_LOAD["a2"],
+                    VALUE_OPTIONS: [350, 600, 800, 1000, 1200],
+                    VALUE_OPTIONS_STATE: "max_load_options",
+                }
+            },
+            SolixMqttCommands.sb_disable_grid_export_switch: CMD_SB_DISABLE_GRID_EXPORT_SWITCH,
+            SolixMqttCommands.sb_ac_input_limit: CMD_SB_AC_INPUT_LIMIT,
+        },
+
+        # Interval: ~3-5 seconds with realtime trigger, or immediately with status request
+        "0405": _A17E2_0405,
+        # Interval: ~3-5 seconds, but only with realtime trigger
+        "040a": _A17E2_040A,
+        # Interval: observed as regular state update
+        "0420": _A17E2_0420,
     },
     # Solarbank 2 E1600 Plus
     "A17C3": {
