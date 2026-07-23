@@ -2445,22 +2445,21 @@ _A17E2_040A = {
     },
     "fe": {NAME: "msg_timestamp"},
 }
-
 _A17E2_0420 = {
-    # Solarbank Max AC / A17E2 state info
+    # Solarbank Max AC state info
     TOPIC: "state_info",
     "a2": {NAME: "device_sn"},
-    "a3": {NAME: "msg_timestamp"},
-    "a4": {NAME: "local_timestamp"},
-    "a5": {NAME: "unknown_0420_a5?"},
-    "a6": {NAME: "unknown_0420_a6?"},
+    "a3": {NAME: "local_timestamp"},
+    "a4": {NAME: "utc_timestamp"},
+    "a5": {NAME: "battery_soc_calc?"},
+    "a6": {NAME: "battery_soh?"},
     "a7": {NAME: "battery_soc"},
     "a8": {NAME: "charging_status"},
     "a9": {NAME: "usage_mode"},
-    "aa": {NAME: "heartbeat_interval?"},
+    "aa": {NAME: "home_load_preset?"},
     "ab": {NAME: "photovoltaic_power"},
     "ac": {NAME: "battery_power_signed"},
-    "ad": {NAME: "ac_output_power_signed"},
+    "ad": {NAME: "ac_output_power"},
     "ae": {NAME: "grid_power_signed?"},
     "af": {NAME: "home_demand"},
     "b0": {NAME: "generator_power?"},
@@ -2473,12 +2472,12 @@ _A17E2_0420 = {
                 TYPE: DeviceHexDataTypes.ui.value,
             },
             "01": {
-                NAME: "device2_sn?",
+                NAME: "device_2_sn?",
                 TYPE: DeviceHexDataTypes.str.value,
                 LENGTH: 17,
             },
             "18": {
-                NAME: "device2_battery_soc?",
+                NAME: "device_2_soc?",
                 TYPE: DeviceHexDataTypes.ui.value,
             },
         },
@@ -2486,18 +2485,16 @@ _A17E2_0420 = {
     "bf": {NAME: "unknown_0420_bf?"},
     "c0": {NAME: "unknown_0420_c0?"},
     "c1": {NAME: "device_sn_dup?"},
-    "c2": {NAME: "device2_pv_power?"},
-    "c3": {NAME: "device2_output_power?"},
-    "c4": {NAME: "device2_home_demand?"},
-    "c5": {NAME: "device2_grid_power?"},
+    "c2": {NAME: "device_2_pv_power?"},
+    "c3": {NAME: "device_2_ac_output_power?"},
+    "c4": {NAME: "device_2_home_demand?"},
+    "c5": {NAME: "device_2_grid_power?"},
     "c6": {NAME: "unknown_0420_c6?"},
     "cc": {NAME: "device_timeout_minutes"},
     "cd": {NAME: "unknown_0420_cd?"},
     "ce": {NAME: "ac_input_limit"},
     "f8": {NAME: "unknown_0420_f8?"},
 }
-
-
 #new max ac fields - END
 _A17E1_040a = {
     # Home Backup System E10 Expansion data
